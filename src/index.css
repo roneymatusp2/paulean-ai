@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Outfit', 'Lato', 'Open Sans', Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: theme('colors.primary.darkgray');
+  background-color: theme('colors.primary.white');
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-outfit font-bold text-primary-blue;
+  }
+
+  h1 {
+    @apply text-h1;
+  }
+
+  h2 {
+    @apply text-h2;
+  }
+
+  h3 {
+    @apply text-h3;
+  }
+
+  h4 {
+    @apply text-xl leading-relaxed;
+  }
+
+  h5 {
+    @apply text-lg leading-relaxed;
+  }
+
+  p {
+    @apply text-body text-primary-darkgray;
+  }
+
+  a {
+    @apply transition-colors duration-default ease-default;
+  }
+}
+
+@layer components {
+  /* Buttons */
+  .btn-primary {
+    @apply bg-primary-red text-primary-white px-6 py-3 rounded font-semibold transition-colors duration-default ease-default hover:bg-[#8a2329];
+  }
+
+  .btn-secondary {
+    @apply bg-primary-blue text-primary-white px-6 py-3 rounded font-semibold transition-colors duration-default ease-default hover:bg-opacity-90;
+  }
+
+  .btn-outline {
+    @apply bg-transparent border-2 border-primary-blue text-primary-blue px-6 py-3 rounded font-semibold transition-colors duration-default ease-default hover:bg-primary-blue hover:text-primary-white;
+  }
+
+  .btn-large {
+    @apply rounded-large px-8 py-4;
+  }
+
+  /* Navbar Styles */
+  .navbar-top {
+    height: 60px;
+  }
+
+  .navbar-menu {
+    min-height: 50px;
+  }
+
+  .navbar-dropdown {
+    @apply shadow-md border-t-2 border-primary-red;
+  }
+
+  .navbar-dropdown-item {
+    @apply block px-4 py-2.5 text-sm text-primary-darkgray hover:bg-secondary-lightgray hover:text-primary-red;
+  }
+
+  .navbar-utility-button {
+    @apply inline-block px-4 py-1.5 rounded text-sm font-medium hover:opacity-90 transition-colors;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-primary-white rounded shadow-card p-6 mb-8 transition-shadow duration-default ease-default hover:shadow-lg;
+  }
+
+  .card-title {
+    @apply text-primary-blue text-xl font-bold mb-2;
+  }
+
+  .card-image {
+    @apply -mx-6 -mt-6 mb-6 rounded-t overflow-hidden;
+  }
+
+  /* Typography Utilities */
+  .page-title {
+    @apply text-h1 font-bold text-primary-blue mb-6;
+  }
+
+  .section-title {
+    @apply text-h2 font-bold text-primary-blue mb-4;
+  }
+
+  .subsection-title {
+    @apply text-h3 font-bold text-primary-blue mb-3;
+  }
+
+  /* Containers */
+  .content-section {
+    @apply py-16;
+  }
+
+  .section-padding {
+    @apply py-12 md:py-16;
+  }
+
+  /* Overlay Gradients */
+  .gradient-overlay-dark {
+    @apply absolute inset-0 bg-gradient-to-t from-overlay-dark to-transparent;
+  }
+
+  .gradient-overlay-medium {
+    @apply absolute inset-0 bg-gradient-to-t from-overlay-medium via-overlay-light to-transparent;
+  }
+
+  /* Responsive Image */
+  .responsive-image {
+    @apply w-full h-full object-cover transition-transform duration-700 group-hover:scale-105;
+  }
+}
+
+/* St. Paul's School Brand Colors */
+:root {
+  --sp-brand-blue: #1e3a8a;
+  --sp-brand-red: #dc2626;
+  --sp-brand-gold: #fbbf24;
+  --sp-brand-navy: #1e293b;
+  --sp-brand-light-blue: #3b82f6;
+  --sp-brand-light-red: #ef4444;
+}
+
+/* Enhanced tool card hover effects */
+.tool-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0);
+}
+
+.tool-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Beautiful gradient backgrounds for tool categories */
+.planning-gradient {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+}
+
+.assessment-gradient {
+  background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+}
+
+.support-gradient {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+}
+
+.communication-gradient {
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+}
+
+.creative-gradient {
+  background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+}
+
+.content-gradient {
+  background: linear-gradient(135deg, #64748b 0%, #94a3b8 100%);
+}
+
+.questions-gradient {
+  background: linear-gradient(135deg, #ea580c 0%, #fb923c 100%);
+}
+
+.analytics-gradient {
+  background: linear-gradient(135deg, #dc2626 0%, #f97316 100%);
+}
+
+/* Animated gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #1e3a8a, #dc2626, #fbbf24);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Enhanced sidebar styling */
+.sidebar-gradient {
+  background: linear-gradient(180deg, #1e3a8a 0%, #1e293b 100%);
+}
+
+/* Glowing effect for popular tools */
+.popular-glow {
+  position: relative;
+}
+
+.popular-glow::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #1e3a8a, #dc2626, #fbbf24, #1e3a8a);
+  border-radius: inherit;
+  z-index: -1;
+  filter: blur(6px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.popular-glow:hover::before {
+  opacity: 0.7;
+}
+
+/* Smooth chat interface */
+.chat-container {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.message-bubble {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Loading animations */
+.pulse-animation {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+/* Responsive design improvements */
+@media (max-width: 768px) {
+  .tool-card {
+    transform: none;
+  }
+  
+  .tool-card:hover {
+    transform: translateY(-4px);
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}

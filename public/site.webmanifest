@@ -1,0 +1,14 @@
+{
+  "name": "St. Paul's School",
+  "short_name": "St. Paul's",
+  "icons": [
+    {
+      "src": "/logos-fix/solid-color.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#002f5c",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}

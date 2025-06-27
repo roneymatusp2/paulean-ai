@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" fill="#1e3a8a"/>
+  <path d="M45 80H60V150H45V80Z" fill="white"/>
+  <path d="M70 80H110C115 80 120 81 123 83C126 85 128 88 128 92C128 95 127 98 125 100C123 102 120 104 117 105V105.5C121 106.5 124 108 126 110C128 112 129 115 129 119C129 123 128 126 125 129C122 132 116 133 108 133H70V80ZM85 101H101C104 101 106 100.5 107 99.5C108 98.5 109 97 109 95C109 93 108 91.5 107 90.5C106 89.5 104 89 101 89H85V101ZM85 124H103C106 124 108 123.5 110 122.5C112 121.5 113 119.5 113 117C113 114.5 112 112.5 110 111.5C108 110.5 106 110 103 110H85V124Z" fill="white"/>
+  <path d="M38 58L162 58" stroke="white" stroke-width="3"/>
+  <path d="M39 160L163 160" stroke="white" stroke-width="3"/>
+  <text x="40" y="180" font-family="Arial" font-size="14" fill="white">ST. PAUL'S SCHOOL</text>
+</svg>

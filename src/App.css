@@ -1,0 +1,14 @@
+/* Custom styles for St. Paul's School */
+#root {
+  width: 100%;
+}
+
+/* Custom utility classes */
+.panel-bg {
+  background-color: rgba(30, 58, 138, 0.05);
+}
+
+/* Animation for hover effects */
+.transition-hover {
+  transition: all 0.3s ease;
+}
