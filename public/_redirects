@@ -1,0 +1,8 @@
+# SPA fallback - redirect all routes to index.html
+/*    /index.html   200
+
+# API proxy to Supabase
+/api/*  https://gjvtncdjcslnkfctqnfy.supabase.co/functions/v1/:splat  200
+
+# Overleaf proxy for experimental features
+/overleaf/*  https://www.overleaf.com/:splat  200 
