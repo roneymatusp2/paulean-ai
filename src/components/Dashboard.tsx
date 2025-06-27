@@ -56,6 +56,7 @@ import LessonPlanGenerator from './LessonPlanGenerator'
 import AssessmentBuilder from './AssessmentBuilder'
 import RubricGenerator from './RubricGenerator'
 import TeacherJokes from './TeacherJokes'
+import OverleafGenerator from './OverleafGenerator'
 
 interface Tool {
   id: string
@@ -104,6 +105,7 @@ const Dashboard = () => {
   const [showCommunicationHelper, setShowCommunicationHelper] = useState(false)
   const [showDataAnalysis, setShowDataAnalysis] = useState(false)
   const [showCreativeActivities, setShowCreativeActivities] = useState(false)
+  const [showOverleafGenerator, setShowOverleafGenerator] = useState(false)
   
   // Chatbot states
   const [messages, setMessages] = useState<Message[]>([])
@@ -380,6 +382,17 @@ const Dashboard = () => {
       icon: Calculator,
       category: 'Analytics',
       color: 'bg-blue-500'
+    },
+
+    // Experimental Tools
+    {
+      id: '31',
+      title: 'Overleaf PDF Generator',
+      description: '🧪 EXPERIMENTAL: Generate PDFs automatically using Overleaf integration',
+      icon: FileText,
+      category: 'Creative',
+      color: 'bg-gradient-to-r from-orange-500 to-red-500',
+      new: true
     }
   ]
 
@@ -878,6 +891,7 @@ This helps me give you the most relevant and useful guidance for your teaching c
     setShowCommunicationHelper(false)
     setShowDataAnalysis(false)
     setShowCreativeActivities(false)
+    setShowOverleafGenerator(false)
     
     // Open the specific tool
     switch (toolTitle) {
@@ -914,6 +928,9 @@ This helps me give you the most relevant and useful guidance for your teaching c
       case 'Song Generator':
       case 'Social Stories':
         setShowCreativeActivities(true)
+        break
+      case 'Overleaf PDF Generator':
+        setShowOverleafGenerator(true)
         break
       default:
         // For tools not yet implemented, show a coming soon message
@@ -1573,6 +1590,15 @@ This helps me give you the most relevant and useful guidance for your teaching c
             >
               Close
             </button>
+          </div>
+        </div>
+      )}
+
+      {/* Overleaf Generator Modal */}
+      {showOverleafGenerator && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="w-full max-w-7xl max-h-[90vh] overflow-y-auto">
+            <OverleafGenerator onClose={() => setShowOverleafGenerator(false)} />
           </div>
         </div>
       )}
