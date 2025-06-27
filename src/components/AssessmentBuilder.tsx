@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { PenTool, Target, CheckCircle, Clock, FileText, Download, Loader2, Wand2, Plus, Minus } from 'lucide-react'
-import { aiService } from '../services/aiService'
+import { advancedAIService } from '../services/aiService'
 
 interface AssessmentBuilderProps {
   onClose?: () => void
@@ -85,7 +85,7 @@ const AssessmentBuilder: React.FC<AssessmentBuilderProps> = ({ onClose }) => {
     setError('')
 
     try {
-      const response = await aiService.generateContent({
+      const response = await advancedAIService.generateContent({
         toolId: 'assessment-builder',
         toolName: 'Assessment Builder',
         category: 'Assessment',

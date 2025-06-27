@@ -14,7 +14,7 @@ import {
   Calendar,
   PieChart
 } from 'lucide-react'
-import { aiService } from '../services/aiService'
+import { advancedAIService } from '../services/aiService'
 
 interface AnalyticsData {
   totalGenerations: number
@@ -37,7 +37,7 @@ const AnalyticsPage = () => {
   const loadAnalytics = async () => {
     setLoading(true)
     try {
-      const data = await aiService.getUsageAnalytics()
+      const data = await advancedAIService.getUsageAnalytics()
       setAnalytics(data)
     } catch (error) {
       console.error('Failed to load analytics:', error)

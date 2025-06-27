@@ -22,7 +22,7 @@ import {
   Brain,
   Cpu
 } from 'lucide-react'
-import { aiService, type AIRequest } from '../services/aiService'
+import { advancedAIService, type AIRequest } from '../services/aiService'
 
 const ToolPage = () => {
   const { toolId } = useParams()
@@ -100,7 +100,7 @@ const ToolPage = () => {
       console.log('🚀 Generating content with AI...', aiRequest)
       
       // Call real AI service
-      const response = await aiService.generateContent(aiRequest)
+      const response = await advancedAIService.generateContent(aiRequest)
       
       if (response.success) {
         setGeneratedContent(response.content)

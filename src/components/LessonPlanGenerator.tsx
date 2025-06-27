@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { BookOpen, Clock, Target, Users, Lightbulb, FileText, Download, Loader2, Wand2 } from 'lucide-react'
-import { aiService } from '../services/aiService'
+import { advancedAIService } from '../services/aiService'
 
 interface LessonPlanGeneratorProps {
   onClose?: () => void
@@ -50,7 +50,7 @@ const LessonPlanGenerator: React.FC<LessonPlanGeneratorProps> = ({ onClose }) =>
     setError('')
 
     try {
-      const response = await aiService.generateContent({
+      const response = await advancedAIService.generateContent({
         toolId: 'lesson-planner',
         toolName: 'Lesson Plan Generator',
         category: 'Planning',

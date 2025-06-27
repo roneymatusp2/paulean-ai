@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Award, Target, FileText, Download, Loader2, Wand2, Plus, Mic } from 'lucide-react'
-import aiService from '../services/aiService'
+import { advancedAIService } from '../services/aiService'
 import PromptEnhancer from './PromptEnhancer'
 
 interface RubricGeneratorProps {
@@ -43,7 +43,7 @@ const RubricGenerator: React.FC<RubricGeneratorProps> = ({ onClose }) => {
     setError('')
 
     try {
-      const response = await aiService.generateContent({
+      const response = await advancedAIService.generateContent({
         toolId: 'rubric-generator',
         toolName: 'Rubric Generator',
         category: 'Assessment',

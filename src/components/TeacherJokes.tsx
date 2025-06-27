@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Smile, Mic, FileText, Download, Loader2, Wand2 } from 'lucide-react'
-import { aiService } from '../services/aiService'
+import { advancedAIService } from '../services/aiService'
 
 interface TeacherJokesProps {
   onClose?: () => void
@@ -31,7 +31,7 @@ const TeacherJokes: React.FC<TeacherJokesProps> = ({ onClose }) => {
     setError('')
 
     try {
-      const response = await aiService.generateContent({
+      const response = await advancedAIService.generateContent({
         toolId: 'teacher-jokes',
         toolName: 'Teacher Jokes',
         category: 'Creative',
